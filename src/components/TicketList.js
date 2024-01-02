@@ -2,18 +2,19 @@ import React from "react";
 import Ticket from "./Ticket";
 import PropTypes from "prop-types";
 
-function TicketList(props) { 
+function TicketList(props){
+
   return (
     <React.Fragment>
-      <hr />
+      <hr/>
       {props.ticketList.map((ticket) =>
-        <Ticket
-          whenTicketClicked = {props.onTicketSelection }
-         names={ticket.names}
+        <Ticket 
+          whenTicketClicked={props.onTicketSelection}
+          names={ticket.names}
           location={ticket.location}
           issue={ticket.issue}
           id={ticket.id}
-          key={index} />
+          key={ticket.id}/>
       )}
     </React.Fragment>
   );
